@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: directus
+    env: docker
+    plan: free
+    region: oregon
+    repo: https://github.com/YOUR_USERNAME/directus-on-render
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /

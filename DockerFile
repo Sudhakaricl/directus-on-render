@@ -1,0 +1,22 @@
+FROM node:18
+
+# Set working directory
+WORKDIR /app
+
+# Install Directus CLI globally
+RUN npm install -g directus
+
+# Create the Directus project folder
+RUN directus init project
+
+# Set working directory to project
+WORKDIR /app/project
+
+# Install project dependencies
+RUN npm install
+
+# Expose Directus default port
+EXPOSE 8055
+
+# Start the app
+CMD ["npx", "directus", "start"]
